@@ -1,5 +1,5 @@
 
-package FacadeGestaoFalha;
+package model;
 /**
  * Classe auxiliadora que centraliza os dados da falha
  * @author Lucas Sanches Marcilio Pereira
@@ -15,6 +15,7 @@ public class DadosFalha {
      * @param tipo Contem o tipo de falha apresentada
      * @param idMaquina  Identificador da falha
      */
+    
     public DadosFalha(String descricao, String tipo, int idMaquina) {
         this.descricao = descricao;
         this.tipo = tipo;
