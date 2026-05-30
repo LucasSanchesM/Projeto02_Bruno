@@ -1,8 +1,8 @@
 package FacadeGestaoFalha;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
+import domain.Falha;
+import org.junit.Test;                
+import static org.junit.Assert.*;      
 /**
  * Classe de testes unitarios estruturados para validação do fluxo de 
  * ciclo de vida de falhas através do padrão Facade.
@@ -23,12 +23,13 @@ public class FacadeGestaoFalhaTest {
      * Verifica se o ciclo de vida da falha avança corretamente do estado inicial para o estado de análise técnica, ou seja, deve transitar de
      * ABERTO -> ANALISE.
      */
+    
     @Test
-    void deveTransitarDeAbertoParaEmAnalise() {
+    public void deveTransitarDeAbertoParaEmAnalise() {
         Falha falha = new Falha(new DadosFalha("Motor parouu", "Mêcanica", 1));
         falha.iniciarAnalise();
         
-        assertEquals("EM_ANALISE", falha.getEstadoAtual().nome());
+        assertEquals("EM_ANALISE", falha.getEstadoAtual());
         
     }
     
