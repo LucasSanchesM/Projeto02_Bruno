@@ -66,4 +66,21 @@ public class EstadoFalhaTest {
 
         assertEquals("APROVADO", falha.getEstadoAtual().nome());
     }
+    
+    /**
+    * Deve recusar uma falha quando ela estiver no estado EM_ANALISE.
+    *
+    * Nesse cenario, ao executar  recusar() a falha deve migrar para o estado RECUSADO
+    */
+
+     @Test
+    public void deveRecusarAPartirDeEmAnalise() {
+        Falha falha = new Falha(new DadosFalha(descricao, tipo, idMaquina));
+        falha.iniciarAnalise();
+        falha.recusar("Sem fundamento tecnico");
+        assertEquals("RECUSADO", falha.getEstadoAtual().nome());
+    }
+}
+    
+    
 }
