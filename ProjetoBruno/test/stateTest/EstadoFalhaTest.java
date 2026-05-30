@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
  */
-package state;
+package stateTest;
 
 import domain.Falha;
 import model.DadosFalha;
@@ -21,7 +21,7 @@ public class EstadoFalhaTest {
     private final String tipo = "Mecânica";
     private final int idMaquina = 1;
 
-    public EstadoFalhaTest() {
+        public EstadoFalhaTest() {
     }
 
     /**
@@ -83,4 +83,3 @@ public class EstadoFalhaTest {
 }
     
     
-}
