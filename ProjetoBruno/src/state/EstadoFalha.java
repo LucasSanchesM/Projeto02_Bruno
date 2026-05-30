@@ -7,8 +7,9 @@ package state;
 import domain.Falha;
 
 /**
- *
- * @author gabri
+ * Padrão STATE: cada estado de Falha sabe quais transições são válidas a partir dele, transições invalidas por padrao
+ * retorna um erro de IllegalStateException
+ * @author Gabriel Dias Santiago
  */
 public interface EstadoFalha {
     

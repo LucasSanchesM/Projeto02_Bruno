@@ -6,7 +6,7 @@ package state;
 
 /**
  *
- * @author gabri
+ * @author Gabriel Dias Santiago
  */
 public class EstadoEncerrado implements EstadoFalha {
 

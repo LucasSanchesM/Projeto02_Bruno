@@ -6,8 +6,13 @@ package state;
 
 /**
  *
- * @author gabri
+ * @author Gabriel Dias Santiago
  */
-public class EstadoRecusado {
+public class EstadoRecusado implements EstadoFalha{
+    
+    @Override
+    public String nome() {
+        return "RECUSADO";
+    }
     
 }

@@ -8,7 +8,7 @@ import domain.Falha;
 
 /**
  *
- * @author gabri
+ * @author Gabriel Dias Santiago
  */
 public class EstadoConcluido implements EstadoFalha {
 
