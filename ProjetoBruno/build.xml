@@ -10,6 +10,8 @@
 <project name="ProjetoBruno" default="default" basedir=".">
     <description>Builds, tests, and runs the project ProjetoBruno.</description>
     <import file="nbproject/build-impl.xml"/>
+
+    
     <!--
 
     There exist several targets which are by default empty and which can be 
@@ -70,4 +72,24 @@
     nbproject/build-impl.xml file. 
 
     -->
+
+    <target name="javadoc" depends="compile">
+    <mkdir dir="${dist.javadoc.dir}"/>
+
+    <javadoc
+        destdir="${dist.javadoc.dir}"
+        sourcepath="${src.dir}:${test.src.dir}"
+        classpath="${javac.classpath}:${build.classes.dir}:${build.test.classes.dir}"
+        private="${javadoc.private}"
+        encoding="${source.encoding}"
+        use="${javadoc.use}"
+        author="${javadoc.author}"
+        version="${javadoc.version}"
+        windowtitle="${javadoc.windowtitle}">
+
+        <fileset dir="${src.dir}" includes="*/.java"/>
+        <fileset dir="${test.src.dir}" includes="*/.java"/>
+
+    </javadoc>
+</target>
 </project>
