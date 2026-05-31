@@ -21,7 +21,7 @@ public interface EstadoFalha {
         throw new IllegalStateException("Transicao invalida: aprovar a partir de " + nome());
     }
 
-    default void recusar(Falha f) {
+    default void recusar(Falha f, String justificativa) {
         throw new IllegalStateException("Transicao invalida: recusar a partir de " + nome());
     }
 

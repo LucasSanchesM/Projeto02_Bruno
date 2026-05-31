@@ -7,16 +7,21 @@ package state;
 import domain.Falha;
 
 /**
- *
+ * Esta classe é uma das possibilidades de estados - EstadoConcluido
  * @author Gabriel Dias Santiago
  */
 public class EstadoConcluido implements EstadoFalha {
-
+    /**
+     * @param f  define o estado do objeto recebido para o proximo na fila - EstadoEncerrado
+     */
     @Override
     public void encerrar(Falha f) {
         f.setEstado(new EstadoEncerrado());
     }
 
+    /**
+     * @return Retorna qual estado é este - Concluido
+     */
     @Override
     public String nome() {
         return "CONCLUIDO";

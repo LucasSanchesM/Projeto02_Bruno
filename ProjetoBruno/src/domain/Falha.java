@@ -15,12 +15,15 @@ public class Falha {
     private String titulo;
     private String categoria;
     private EstadoFalha estadoAtual = new EstadoAberto();
-
+    /**
+     * 
+     * @param dados Obtem a descrição e o tipo que está no objeto obtido
+     */
     public Falha(DadosFalha dados) {
         this.titulo = dados.getDescricao();
         this.categoria = dados.getTipo();
     }
-
+    
     public void iniciarAnalise() {
         estadoAtual.iniciarAnalise(this);
     }
@@ -30,7 +33,7 @@ public class Falha {
     }
     
      public void recusar(String justificativa) {
-        estadoAtual.recusar(this);
+        estadoAtual.recusar(this, justificativa);
     }
 
     public void iniciarAtendimento() {
@@ -56,15 +59,24 @@ public class Falha {
     public String getCategoria() {
         return categoria;
     }
-
+    /**
+     * 
+     * @param titulo Define o atributo titulo para a string recebida 
+     */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-
+    /**
+     * 
+     * @param categoria  Define o atributo categoria para a String recebida
+     */
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
-
+    /**
+     * 
+     * @param novoEstado Define o atributo estadoAtual para o novo estado recebido
+     */
       public void setEstado(EstadoFalha novoEstado) {
         this.estadoAtual = novoEstado;
     }

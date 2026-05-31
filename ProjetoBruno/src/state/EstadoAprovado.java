@@ -7,16 +7,22 @@ package state;
 import domain.Falha;
 
 /**
- *
+ * Esta classe é uma das possibilidades de estados - EstadoAprovado
  * @author Gabriel Dias Santiago
  */
 public class EstadoAprovado implements EstadoFalha{
-    
+    /**
+     * 
+     * @param f  define o estado do objeto recebido para o proximo na fila - EstadoEmAtendimento
+     */
     @Override
     public void iniciarAtendimento(Falha f) {
         f.setEstado(new EstadoEmAtendimento());
     }
-
+    /**
+     * 
+     * @return Retorna qual estado é este - Aprovado
+     */
     @Override
     public String nome() {
         return "APROVADO";

@@ -7,21 +7,29 @@ package state;
 import domain.Falha;
 
 /**
- *
+ * Esta classe é uma das possibilidades de estados - EstadoEmAnalise
  * @author Gabriel Dias Santiago
  */
 public class EstadoEmAnalise implements EstadoFalha {
 
+    /**
+     * @param f  define o estado do objeto recebido para o proximo na fila - EstadoAprovado
+     */
     @Override
     public void aprovar(Falha f) {
         f.setEstado(new EstadoAprovado());
     }
-
+    /**
+     * @param f  define o estado do objeto recebido para recusado
+     */
     @Override
-    public void recusar(Falha f) {
-        f.setEstado(new EstadoRecusado());
+    public void recusar(Falha f, String justificativa) {
+        f.setEstado(new EstadoRecusado(justificativa));
     }
 
+    /**
+     * @return Retorna qual estado é este - Em_Analise
+     */
     @Override
     public String nome() {
         return "EM_ANALISE";
