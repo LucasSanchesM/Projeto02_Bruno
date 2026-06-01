@@ -1,7 +1,9 @@
 package factory;
 /**
  * Implementação de funcionario como operador
- * @author lucas
+ * @author Lucas Sanches Marcilio Pereira
+ * @since 2026
+ * @version 1.0.0
  */
 public class Operador implements Funcionario{
     private int id;
