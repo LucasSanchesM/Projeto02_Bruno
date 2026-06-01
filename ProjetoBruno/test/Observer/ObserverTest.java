@@ -37,9 +37,10 @@ public class ObserverTest {
         ObservadorFake obs = new ObservadorFake();
         f.adicionarObservador(obs);
 
-        f.notificarObservadores();
-
-        assertEquals(1, obs.vezesNotificado);
+        f.aprovar();
+        f.concluir();
+        
+        assertEquals(2, obs.vezesNotificado);
     }
     
       // Todos os observadores recebem a notificacao
@@ -61,6 +62,7 @@ public class ObserverTest {
     }
     
     // Observador removido nao pode mais ser notificado
+    
     @Test
     public void naoDeveNotificarObservadorRemovido() {
         Falha f = new Falha(new DadosFalha(descricao, tipo, idMaquina));
