@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package facade;
+
+import domain.Falha;
+import model.DadosFalha;
+
 /**
  * Fachada responsável por centralizar e simplificar o gerenciamento
  * do ciclo de vida de uma falha.
@@ -13,49 +17,70 @@ package facade;
  * @author Mirel
  */
 public class FacadeGestaoFalha {
-    private FacadeFalha falha;
+    
+    private Falha falha;
     /**
      * Abre uma nova falha no estado inicial ABERTO.
      *
      * @param dados Dados necessários para criação da falha.
      * @return Falha criada.
      */
-    public FacadeFalha abrirFalha(FacadeDadosFalha dados) {
+    
+     public FacadeGestaoFalha() {
+    }
+     
+     /**
+     * Abre uma nova falha no estado inicial ABERTO.
+     *
+     * @param dados dados de entrada da falha (titulo, descricao, maquina).
+     * @return a {@link Falha} criada.
+     */
+    
+    public Falha abrirFalha(DadosFalha dados) {
 
+      if (falha == null) {
+            falha = new Falha(dados);
+        }    
+        
     System.out.println("Validando dados...");
     System.out.println("Registrando incidente...");
     System.out.println("Associando máquina afetada...");
 
-    falha = new FacadeFalha(
-            dados.getTitulo(),
-            dados.getDescricao(),
-            dados.getMaquina(),
-            "ABERTO"
-    );
-    /**
-     * Altera o estado da falha para EM_ANALISE.
-     */
-
     return falha;
 }
-    public void iniciarAnalise() {
-        System.out.println("Iniciando análise...");
-        falha.setEstado("EM_ANALISE");
-    }
     /**
      * Altera o estado da falha para APROVADA.
      */
 
-    public void aprovarFalha() {
-        System.out.println("Aprovando falha...");
-        falha.setEstado("APROVADA");
+    public void aprovarFalha(int idFalha) {
+        System.out.println("Aprovando falha..." + idFalha);
+        falha.aprovar();
     }
     /**
-     * Altera o estado da falha para EM_ATENDIMENTO.
+     * Inicia o atendimento da falha por um tecnico.
+     *
+     * @param idFalha   identificador da falha.
+     * @param idTecnico identificador do tecnico responsavel.
      */
 
-    public void atenderFalha() {
-        System.out.println("Atendendo falha...");
-        falha.setEstado("EM_ATENDIMENTO");
+    public void atenderFalha(int idFalha, int idTecnico) {
+        System.out.println("Atendendo falha numero: " + idFalha + "" + "técnico: " + idTecnico);
+        falha.iniciarAtendimento();
+    }
+    
+    /**
+     * Encerra a falha indicada.
+     *
+     * @param idFalha identificador da falha a encerrar.
+     */
+    
+    public void encerrarFalha() {
+        System.out.println("Encerrando falha...");
+        falha.encerrar();
+    }
+    
+    public void iniciarAnaliseFalha(int idFalha) {
+    System.out.println("Iniciando analise da falha..." + idFalha);
+    falha.iniciarAnalise();
     }
 }

@@ -6,8 +6,9 @@ package stateTest;
 
 import domain.Falha;
 import model.DadosFalha;
-import static org.junit.Assert.*;
 import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Classe de testes unitários para validar o comportamento da classe Falha em seu ciclo de vida de estados.

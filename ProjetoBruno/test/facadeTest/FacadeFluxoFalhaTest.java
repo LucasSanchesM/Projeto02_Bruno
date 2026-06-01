@@ -16,33 +16,29 @@ package facadeTest;
  * @author Mirel
  */
 
-import facade.FacadeDadosFalha;
-import facade.FacadeFalha;
+import domain.Falha;
 import facade.FacadeGestaoFalha;
+import model.DadosFalha;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class FacadeFluxoFalhaTest {
     
     @Test
-    public void deveConcluirFluxoDeFalhaComSucesso() {
-
+    public void deveConcluirFluxoDeFalhaComSucessoAteAtendimento() {
+        
+        int idFalha = 1;
+        int idTecnico = 1;
+        
         FacadeGestaoFalha facade = new FacadeGestaoFalha();
 
-        FacadeDadosFalha dados = new FacadeDadosFalha(
-                "Erro no sistema",
-                "Sistema travou",
-                "Máquina 01"
-        );
+        Falha falha = facade.abrirFalha(new DadosFalha("Motor parou", "Mecanica", 1));
 
-        FacadeFalha falha = facade.abrirFalha(dados);
-
-        facade.iniciarAnalise();
-        facade.aprovarFalha();
-        facade.atenderFalha();
-
-        assertNotNull(falha);
-        assertEquals("EM_ATENDIMENTO", falha.getEstado());
+        facade.iniciarAnaliseFalha(idFalha);
+        facade.aprovarFalha(idFalha);
+        facade.atenderFalha(idFalha, idTecnico);
+        
+        assertEquals("EM_ATENDIMENTO", falha.getEstadoAtual().nome());
     }
     
 }

@@ -4,19 +4,18 @@
  */
 package facadeTest;
 
+import domain.Falha;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 import facade.FacadeGestaoFalha;
-import facade.FacadeDadosFalha;
-import facade.FacadeFalha;
+import model.DadosFalha;
 
 /**
  * Teste responsável por validar a abertura de uma falha
  * utilizando a fachada FacadeGestaoFalha.
  *
  * Verifica se a falha é criada corretamente
- * e se inicia no estado ABERTO.
+ * e se inicia no estado ABERTO e também valida se ele realmente cria com os dados dos quais estamos passando
  *
  * @author Mirel
  */
@@ -26,16 +25,10 @@ public class FacadeGestaoFalhaTest {
 
         FacadeGestaoFalha facade = new FacadeGestaoFalha();
 
-        FacadeDadosFalha dados = new FacadeDadosFalha(
-                "Erro no sistema",
-                "Sistema travou",
-                "Máquina 01"
-        );
-
-        FacadeFalha falha = facade.abrirFalha(dados);
-
-        assertNotNull(falha);
-        assertEquals("ABERTO", falha.getEstado());
-        assertEquals("Erro no sistema", falha.getTitulo());
+        Falha falha = facade.abrirFalha(new DadosFalha("Motor parou", "Mêcanica", 1));
+        
+        assertEquals("ABERTO", falha.getEstadoAtual().nome());
+        assertEquals("Motor parou", falha.getTitulo());
+        
     }
 }
