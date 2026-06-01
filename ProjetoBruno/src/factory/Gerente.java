@@ -6,9 +6,7 @@ package factory;
 
 /**
  * Implementação de funcionario como gerente
- * @author Lucas Sanches Marcilio Pereira
- * @since 2026
- * @version 1.0.0
+ * @author lucas
  */
 public class Gerente implements Funcionario{
     private int id;

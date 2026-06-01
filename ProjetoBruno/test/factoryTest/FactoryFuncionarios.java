@@ -20,4 +20,12 @@ public class FactoryFuncionarios {
         Funcionario funcionario = fabrica.criarFuncionario();
         assertTrue("O Funcionario criado deve ser um Operador", funcionario instanceof Operador);
     }
+    @Test
+    public void deveCriarUmGerente(){
+        FabricaFuncionarios fabrica = new FabricaGerente();
+        Funcionario funcionario = fabrica.criarFuncionario();
+        assertTrue("O Funcionario criado deve ser um Gerente", funcionario instanceof Gerente);
+    }
+    
+    
 }
