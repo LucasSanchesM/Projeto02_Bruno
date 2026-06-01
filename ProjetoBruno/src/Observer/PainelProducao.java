@@ -4,14 +4,19 @@
  */
 package Observer;
 
+import domain.Falha;
+
 /**
  *
  * @author vasco
  */
 public class PainelProducao implements ObservadorFalha {
 
-    @Override
+       @Override
     public void atualizar(Falha falha) {
-        // Em producao: atualizar dashboard de chao de fabrica.
+        System.out.println("[PainelProducao] Painel atualizado | Falha: '" + falha.getTitulo()
+                + "' | Estado: " + falha.getEstadoAtual().nome()
+                + " | Prioridade: " + falha.getPrioridade()
+                + " | Maquina parada: " + (falha.isMaquinaParada() ? "SIM" : "NAO") + ".");
     }
 }
