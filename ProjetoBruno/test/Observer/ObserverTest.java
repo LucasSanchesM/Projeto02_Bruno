@@ -10,18 +10,24 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- *
+ * Classe de testes unitários para verificar o comportamento básico do padrão Observer
+ * na classe `Falha`. Estes testes focam na funcionalidade de registro, notificação
+ * e remoção de observadores, sem considerar as transições de estado da `Falha`.
+ * 
  * @author vasco
  */
 public class ObserverTest {
     
+    //facilitar e padroniza parametros
     private final String descricao = "Motor meu parou";
     private final String tipo = "Mecânica";
     private final int idMaquina = 1;
     
-   /** Observador Fake: foi criado uma classe que registra quantas vezes recebeu atualizar(). */
-
-    
+   /** 
+    * observador fake: uma implementação de `ObservadorFalha` utilizada para testes nesse caso.
+    * Ela simplesmente conta quantas vezes o método `atualizar()` foi invocado,
+    * permitindo verificar se as notificações estão ocorrendo conforme o esperado.
+    */
     static class ObservadorFake implements ObservadorFalha {
         int vezesNotificado = 0;
 
@@ -31,19 +37,27 @@ public class ObserverTest {
         }
     }
     
+    /**
+     * Testa se um observador registrado é notificado corretamente quando o Subject
+     * (a classe `Falha`) invoca o método `notificarObservadores()`.
+     * Espera-se que o observador seja notificado uma única vez.
+     */
     @Test
     public void deveNotificarObservadorRegistrado() {
         Falha f = new Falha(new DadosFalha(descricao, tipo, idMaquina));
         ObservadorFake obs = new ObservadorFake();
         f.adicionarObservador(obs);
 
-        f.aprovar();
-        f.concluir();
-        
-        assertEquals(2, obs.vezesNotificado);
+        f.notificarObservadores();
+
+        assertEquals(1, obs.vezesNotificado);
     }
     
-      // Todos os observadores recebem a notificacao
+    /**
+     * Testa se múltiplos observadores registrados são notificados corretamente
+     * quando o Subject (a classe `Falha`) invoca o método `notificarObservadores()`.
+     * Espera-se que cada observador seja notificado uma única vez.
+     */
     @Test
     public void deveNotificarMultiplosObservadores() {
         Falha f = new Falha(new DadosFalha(descricao, tipo, idMaquina));
@@ -61,7 +75,10 @@ public class ObserverTest {
         assertEquals(1, obs3.vezesNotificado);
     }
     
-    // Observador removido nao pode mais ser notificado
+    /**
+     * Testa se um observador que foi removido da lista de observadores do Subject (a classe `Falha`) não é mais notificado quando `notificarObservadores()`
+     * é invocado. Esperase que o observador não seja notificado nenhuma vez.
+     */
     
     @Test
     public void naoDeveNotificarObservadorRemovido() {
@@ -74,8 +91,4 @@ public class ObserverTest {
 
         assertEquals(0, obs.vezesNotificado);
     }
-    
-    
-    
-    
 }

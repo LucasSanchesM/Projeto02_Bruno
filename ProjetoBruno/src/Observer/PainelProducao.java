@@ -12,7 +12,7 @@ import domain.Falha;
  */
 public class PainelProducao implements ObservadorFalha {
 
-       @Override
+    @Override
     public void atualizar(Falha falha) {
         System.out.println("[PainelProducao] Painel atualizado | Falha: '" + falha.getTitulo()
                 + "' | Estado: " + falha.getEstadoAtual().nome()

@@ -10,7 +10,7 @@ import domain.Falha;
  *
  * @author vasco
  */
-public class NotificadorTecnico {
+public class NotificadorTecnico implements ObservadorFalha {
     
      @Override
     public void atualizar(Falha falha) {
