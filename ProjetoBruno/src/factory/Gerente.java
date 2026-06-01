@@ -1,13 +1,18 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package factory;
+
 /**
- * Implementação de funcionario como operador
+ * Implementação de funcionario como gerente
  * @author lucas
  */
-public class Operador implements Funcionario{
+public class Gerente implements Funcionario{
     private int id;
     private String nome;
     /**
-     * @return retorna o inteiro denominado id armazenado na classe
+     * @return retorna o valor do atributo id
      */
     @Override
     public int getId() {
@@ -21,14 +26,14 @@ public class Operador implements Funcionario{
         this.id = id;
     }
     /**
-     * @return retorna a String denominada nome armazenada na classe
+     * @return retorna o valor (String) do atributo nome
      */
     @Override
     public String getNome() {
         return nome;
     }
     /**
-     * @param nome define o valor do atributo nome para a String recebida
+     * @param nome define o valor do atributo nome para a String recebida 
      */
     @Override
     public void setNome(String nome) {
