@@ -24,8 +24,6 @@ public class Falha {
     private Prioridade prioridade;
     private final List<ObservadorFalha> observadores = new ArrayList<>();
 
-
-
     /**
      * 
      * @param dados Obtem a descrição e o tipo que está no objeto obtido
