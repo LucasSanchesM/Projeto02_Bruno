@@ -5,17 +5,15 @@
         <group>
             <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/test/facadeTest/FacadeFluxoFalhaTest.java</file>
             <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/test/stateTest/EstadoFalhaTest.java</file>
-            <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/src/Observer/ObserverGestaoFalha.java</file>
             <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/src/domain/Falha.java</file>
             <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/src/facade/FacadeGestaoFalha.java</file>
             <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/test/facadeTest/FacadeGestaoFalhaTest.java</file>
-            <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/test/ObserverTest/ObserverTesteUmAssinante.java</file>
             <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/src/model/DadosFalha.java</file>
             <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/test/main/EstadoFalhaTest.java</file>
-            <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/test/ObserverTest/ObserverTesteMultiplosAssinantes.java</file>
-            <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/test/ObserverTest/ObserverTesteRemocaoAssinante.java</file>
             <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/src/state/EstadoAprovado.java</file>
             <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/src/state/EstadoConcluido.java</file>
+            <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/src/state/EstadoEncerrado.java</file>
+            <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/src/state/EstadoEmAtendimento.java</file>
         </group>
     </open-files>
 </project-private>
