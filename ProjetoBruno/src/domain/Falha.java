@@ -1,6 +1,10 @@
 package domain;
 
+import Observer.ObservadorFalha;
+import java.util.ArrayList;
+import java.util.List;
 import model.DadosFalha;
+import model.Prioridade;
 import state.EstadoAberto;
 import state.EstadoFalha;
 
@@ -15,6 +19,13 @@ public class Falha {
     private String titulo;
     private String categoria;
     private EstadoFalha estadoAtual = new EstadoAberto();
+    private int horasRestantesSLA = 24;
+    private boolean maquinaParada;
+    private Prioridade prioridade;
+    private final List<ObservadorFalha> observadores = new ArrayList<>();
+
+
+
     /**
      * 
      * @param dados Obtem a descrição e o tipo que está no objeto obtido
@@ -26,10 +37,12 @@ public class Falha {
     
     public void iniciarAnalise() {
         estadoAtual.iniciarAnalise(this);
+        notificarObservadores();
     }
     
     public void aprovar() {
         estadoAtual.aprovar(this);
+        notificarObservadores();
     }
     
      public void recusar(String justificativa) {
@@ -38,14 +51,17 @@ public class Falha {
 
     public void iniciarAtendimento() {
         estadoAtual.iniciarAtendimento(this);
+        notificarObservadores();
     }
 
     public void concluir() {
         estadoAtual.concluir(this);
+        notificarObservadores();
     }
 
     public void encerrar() {
         estadoAtual.encerrar(this);
+        notificarObservadores();
     }
 
     public EstadoFalha getEstadoAtual() {
@@ -80,6 +96,37 @@ public class Falha {
       public void setEstado(EstadoFalha novoEstado) {
         this.estadoAtual = novoEstado;
     }
+      
+    public int getHorasRestantesSLA() {
+      return horasRestantesSLA;
+    }
+    
+     public boolean isMaquinaParada() {
+        return maquinaParada;
+    }
+
+    public void setMaquinaParada(boolean maquinaParada) {
+        this.maquinaParada = maquinaParada;
+    }
+    
+    public Prioridade getPrioridade() {
+        return prioridade;
+    }
+    
+    public void adicionarObservador(ObservadorFalha o) {
+        observadores.add(o);
+    }
+
+    public void removerObservador(ObservadorFalha o) {
+        observadores.remove(o);
+    }
+
+    public void notificarObservadores() {
+        for (ObservadorFalha o : observadores) {
+            o.atualizar(this);
+        }
+    }
+      
     
     
 }

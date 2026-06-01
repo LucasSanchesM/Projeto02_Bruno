@@ -4,10 +4,18 @@
  */
 package Observer;
 
+import domain.Falha;
+
 /**
  *
  * @author vasco
  */
 public class NotificadorTecnico {
     
+     @Override
+    public void atualizar(Falha falha) {
+
+        System.out.println("[NotificadorTecnico] Tecnico avisado: falha '" + falha.getTitulo()
+                + "' agora esta no estado " + falha.getEstadoAtual().nome() + ".");
+    }
 }
