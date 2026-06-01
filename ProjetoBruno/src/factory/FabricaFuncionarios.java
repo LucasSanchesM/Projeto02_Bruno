@@ -1,8 +1,8 @@
 package factory;
 
 /**
- * Usada de base para criação de outras fabricas
- * @author Lucas Sanches Marcilio Pereira
+ * Classe usada de base para criação de outras fabricas
+ * @author lucas
  * @since 2026
  * @version 1.0.0
  */
