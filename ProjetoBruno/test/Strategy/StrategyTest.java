@@ -1,38 +1,39 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Strategy;
-
-/**
- * Teste responsável por validar o fluxo completo
- * do ciclo de vida de uma falha.
- *
- * Verifica a execução sequencial das operações
- * abrirFalha, iniciarAnalise, aprovarFalha e
- * atenderFalha, garantindo que o estado final
- * seja EM_ATENDIMENTO.
- *
- * @author Thalyson
- */
 
 import org.junit.Test;
 import static org.junit.Assert.*;
 import StrategyMTH.*;
 import domain.Falha;
 import model.DadosFalha;
+
+/**
+ * Classe de testes unitários para prirização de falhas por categoria e grau de impacto.
+ * Os testes verificam as falhas e seu impacto em cada estado e os delegam, garantindo que as regras de negócio das prioridades de falhas  sejam respeitadas
+ * @since 2026-06-2026
+ * @version 1.0.0
+ * @author Thalyson Gama
+ */ 
 public class StrategyTest {
     
     @Test
-   
-      public void ImpactoProducao(){
-          Falha falha = new Falha(new DadosFalha("Parou a esteira", "Mecanica", 2));
-          DelegarFalha delegar = new DelegarFalha(falha);
-          Priorizacao impacto = delegar.prioriorizacao(true); 
-         //PriorizarAutomatica priori = new PriorizarAutomatica(impacto); 
-          
-          
-        assertEquals("Nivel Critico", impacto.getNivel());
-        }
+    public void validandoAsTresEstrategias() {
         
+        Falha falha = new Falha(new DadosFalha("Painel apagou", "Eletrica", 2));
+        
+       
+        Priorizacao impacto = new Impacto(true); 
+        PriorizarAutomatica motorImpacto = new PriorizarAutomatica(impacto);
+       
+        assertEquals("Nivel Critico", motorImpacto.retornarNivel());
+        
+        
+        Priorizacao sla = new PriorizacaoSLA(1); 
+        PriorizarAutomatica motorSLA = new PriorizarAutomatica(sla);
+        assertEquals("Nivel Critico", motorSLA.retornarNivel());
+        
+        
+        Priorizacao categoria = new PriorizacaoCategoria(falha); 
+        PriorizarAutomatica motorCategoria = new PriorizarAutomatica(categoria);
+        assertEquals("Nivel Critico", motorCategoria.retornarNivel());
+    }
 }

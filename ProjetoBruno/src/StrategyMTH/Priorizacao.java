@@ -5,8 +5,8 @@
 package StrategyMTH;
 
 /**
- *
- * @author Panasonic
+ * Interface para priorização
+ * @author Thalyson
  */
 public interface Priorizacao {
     

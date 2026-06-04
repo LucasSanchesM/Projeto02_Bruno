@@ -1,38 +1,34 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package StrategyMTH;
-
 /**
- *
- * @author Panasonic
+ * Classe que implementa a interface priorização sendo um dos possíveis casos
+ * @author Thalyson
+ * @since 2026
+ * @version 1.0.0
  */
-public class Impacto implements Priorizacao{
-    boolean MaquinaParada;
-
-    public Impacto(boolean MaquinaParada) {
-        this.MaquinaParada = MaquinaParada;
+public class Impacto implements Priorizacao {
+    private boolean maquinaParada;
+/**
+ * 
+ * @param maquinaParada booleano de estado da maquina
+ */
+    public Impacto(boolean maquinaParada) {
+        this.maquinaParada = maquinaParada;
     }
-    
-    public String getNome(){
+    /**
+     * 
+     * @return Retorna uma String de tipo do impacto 
+     */
+    @Override
+    public String getNome() {
         return "impacto de produção";
-        
-        
     }
     
-    public String getNivel(){
-       if(MaquinaParada){
-        return "Nivel Critico";
-           
-       }else{
-           return "alto";
-       }
-   
-       
+  /**
+   * 
+   * @return Retorna uma String do grau do nivel
+   */
+    @Override
+    public String getNivel() {
+        return maquinaParada ? "Nivel Critico" : "alto";
     }
-    
-    
-    
-    
 }
