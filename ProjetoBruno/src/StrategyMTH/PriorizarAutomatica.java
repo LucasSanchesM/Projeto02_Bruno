@@ -1,29 +1,40 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package StrategyMTH;
 
 /**
- *
- * @author Panasonic
+ * Lida com a priorização independente do tipo
+ * @author Thalyson
+ * @since 04-06-2026
+ * @version 1.0.0
  */
 public class PriorizarAutomatica {
-    Priorizacao estrategia;
+    private Priorizacao estrategia;
 
+   /**
+    * 
+    * @param estrategia Define um objeto recebido pela classe 
+    */
     public PriorizarAutomatica(Priorizacao estrategia) {
         this.estrategia = estrategia;
-        
     }
-
-     public String RetornarNivel(){
-     
+/**
+ * 
+ * @param estrategia seta os valores de acordo com o objeto recebido
+ */
+    public void setEstrategia(Priorizacao estrategia) {
+        this.estrategia = estrategia;
+    }
+/**
+ * 
+ * @return Retorna o nivel de acordo com o objeto estratégia que esta aramzenado na classe 
+ */
+    public String retornarNivel() {
         return estrategia.getNivel();
     }
-     
-     public String retornarnome(){
-         return estrategia.getNome();
-     }
-     
- 
+     /**
+      * 
+      * @return  Retorna o nome de acordo com o objeto estratégia que esta aramzenado na classe 
+      */
+    public String retornarNome() {
+        return estrategia.getNome();
+    }
 }
