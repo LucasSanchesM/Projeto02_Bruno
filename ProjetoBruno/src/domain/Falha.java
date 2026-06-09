@@ -1,6 +1,7 @@
 package domain;
 
 import Observer.ObservadorFalha;
+import Strategy.EstrategiaPriorizacao;
 import java.util.ArrayList;
 import java.util.List;
 import model.DadosFalha;
@@ -23,6 +24,7 @@ public class Falha {
     private boolean maquinaParada;
     private Prioridade prioridade;
     private final List<ObservadorFalha> observadores = new ArrayList<>();
+    private EstrategiaPriorizacao estrategiaPriorizacao;
 
     /**
      * 
@@ -124,7 +126,31 @@ public class Falha {
             o.atualizar(this);
         }
     }
-      
-    
+
+        /**
+     * Define a estrategia de priorizacao a ser utilizada (padrao Strategy).
+     *
+     * @param estrategia a estrategia de priorizacao injetada.
+     */
+    public void setEstrategiaPriorizacao(EstrategiaPriorizacao estrategia) {
+        this.estrategiaPriorizacao = estrategia;
+    }
+
+    /**
+     * Aplica a prioridade automaticamente delegando o calculo para a
+     * estrategia configurada, sem executar regras locais.
+     */
+    public void aplicarPrioridadeAutomatica() {
+        this.prioridade = estrategiaPriorizacao.calcularPrioridade(this);
+    }
+
+    /**
+     * Define a quantidade de horas restantes do SLA.
+     *
+     * @param horasRestantesSLA horas restantes ate o estouro do SLA.
+     */
+    public void setHorasRestantesSLA(int horasRestantesSLA) {
+        this.horasRestantesSLA = horasRestantesSLA;
+    }
     
 }

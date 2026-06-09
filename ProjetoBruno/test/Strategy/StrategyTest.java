@@ -2,9 +2,12 @@ package Strategy;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import StrategyMTH.*;
 import domain.Falha;
 import model.DadosFalha;
+import model.Prioridade;
+import stubs.DadosFalhaStub;
+import stubs.EstrategiaFake;
+import stubs.FalhaStrategyStub;
 
 /**
  * Classe de testes unitários para prirização de falhas por categoria e grau de impacto.
@@ -13,27 +16,55 @@ import model.DadosFalha;
  * @version 1.0.0
  * @author Thalyson Gama
  */ 
+
 public class StrategyTest {
     
+   /**
+     * CT-05: falha que interrompe a linha de producao deve ser CRITICA.
+     */
+    
     @Test
-    public void validandoAsTresEstrategias() {
+    public void ct05_impactoComMaquinaParadaDeveSerCritica() {
         
-        Falha falha = new Falha(new DadosFalha("Painel apagou", "Eletrica", 2));
-        
-       
-        Priorizacao impacto = new Impacto(true); 
-        PriorizarAutomatica motorImpacto = new PriorizarAutomatica(impacto);
-       
-        assertEquals("Nivel Critico", motorImpacto.retornarNivel());
-        
-        
-        Priorizacao sla = new PriorizacaoSLA(1); 
-        PriorizarAutomatica motorSLA = new PriorizarAutomatica(sla);
-        assertEquals("Nivel Critico", motorSLA.retornarNivel());
-        
-        
-        Priorizacao categoria = new PriorizacaoCategoria(falha); 
-        PriorizarAutomatica motorCategoria = new PriorizarAutomatica(categoria);
-        assertEquals("Nivel Critico", motorCategoria.retornarNivel());
+        FalhaStrategyStub falha = new FalhaStrategyStub(new DadosFalhaStub());
+        falha.setMaquinaParada(true);
+
+        Prioridade resultado = new PriorizacaoPorImpactoProducao().calcularPrioridade(falha);
+
+        assertEquals(Prioridade.CRITICA, resultado);
     }
+    
+    /**
+     * CT-06: janela de SLA abaixo do limite de seguranca deve ser ALTA.
+     */
+    
+    @Test
+    public void ct06_slaComPoucasHorasDeveSerAlta() {
+        FalhaStrategyStub falha = new FalhaStrategyStub(new DadosFalhaStub());
+        falha.setHorasRestantesSLAForcadas(1);
+
+        Prioridade resultado = new PriorizacaoPorSLA().calcularPrioridade(falha);
+
+        assertEquals(Prioridade.ALTA, resultado);
+    }
+
+     /**
+     * CT-07: prova que a Falha DELEGA o calculo a estrategia injetada,
+     * usando um spy (EstrategiaFake) que registra a chamada.
+     */
+    
+    @Test
+    public void ct07_falhaDeveDelegarCalculoParaEstrategiaInjetada() {
+        FalhaStrategyStub falha = new FalhaStrategyStub(new DadosFalhaStub());
+        EstrategiaFake fake = new EstrategiaFake();
+
+        falha.setEstrategiaPriorizacao(fake);
+        falha.aplicarPrioridadeAutomatica();
+
+        assertTrue("A estrategia injetada deveria ter sido acionada",fake.isFoiChamada());
+        assertEquals(Prioridade.MEDIA, falha.getPrioridade());
+    }
+    
+    
+    
 }
