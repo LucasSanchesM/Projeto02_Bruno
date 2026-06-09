@@ -1,13 +1,17 @@
-package factory;
+package model;
+
+import services.Funcionario;
+
 /**
- * Implementação de funcionario como operador
+ * Implementação de funcionario como Tecnico
  * @author Lucas Sanches Marcilio Pereira
  * @since 2026
  * @version 1.0.0
  */
-public class Operador implements Funcionario{
+public class Tecnico implements Funcionario{
     private int id;
     private String nome;
+    
     /**
      * @return retorna o inteiro denominado id armazenado na classe
      */

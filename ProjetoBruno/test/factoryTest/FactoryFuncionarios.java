@@ -1,4 +1,8 @@
 package factoryTest;
+import model.Gerente;
+import model.Operador;
+import model.Tecnico;
+import services.Funcionario;
 import factory.*;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;

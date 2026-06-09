@@ -1,5 +1,7 @@
 package factory;
 
+import services.Funcionario;
+
 /**
  * Usada de base para criação de outras fabricas
  * @author Lucas Sanches Marcilio Pereira
