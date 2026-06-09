@@ -1,6 +1,7 @@
 
 package factory;
 
+import services.FabricaFuncionarios;
 import model.Gerente;
 import services.Funcionario;
 

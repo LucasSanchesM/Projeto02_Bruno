@@ -1,5 +1,6 @@
 package factory;
 
+import services.FabricaFuncionarios;
 import model.Tecnico;
 import services.Funcionario;
 
