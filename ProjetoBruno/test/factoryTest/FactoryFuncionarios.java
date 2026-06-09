@@ -28,19 +28,19 @@ public class FactoryFuncionarios {
     }
     
     @Test
-    public void deveCriarUmOperador() {
+    public void ct11_deveCriarUmOperador() {
         FabricaFuncionarios fabrica = new FabricaOperadorStub();
         Funcionario funcionario = fabrica.criarFuncionario();
         assertTrue("O Funcionario criado deve ser um Operador", funcionario instanceof Operador);
     }
     @Test
-    public void deveCriarUmGerente(){
+    public void ct12_deveCriarUmGerente(){
         FabricaFuncionarios fabrica = new FabricaGerenteStub();
         Funcionario funcionario = fabrica.criarFuncionario();
         assertTrue("O Funcionario criado deve ser um Gerente", funcionario instanceof Gerente);
     }
     @Test
-    public void deveCriarUmTecnico(){
+    public void ct13_deveCriarUmTecnico(){
         FabricaFuncionarios fabrica = new FabricaTecnicoStub();
         Funcionario funcionario = fabrica.criarFuncionario();
         assertTrue("O Funcionario criado deve ser um Tecnico", funcionario instanceof Tecnico);
