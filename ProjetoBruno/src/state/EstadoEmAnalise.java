@@ -4,6 +4,7 @@
  */
 package state;
 
+import services.EstadoFalha;
 import domain.Falha;
 
 /**

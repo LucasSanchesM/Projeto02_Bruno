@@ -6,7 +6,7 @@ import java.util.List;
 import model.DadosFalha;
 import model.Prioridade;
 import state.EstadoAberto;
-import state.EstadoFalha;
+import services.EstadoFalha;
 
 /**
  * @author Gabriel Dias Santiago

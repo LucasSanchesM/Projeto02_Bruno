@@ -4,6 +4,8 @@
  */
 package state;
 
+import services.EstadoFalha;
+
 /**
  * Esta classe é uma das possibilidades de estados - EstadoRecusado
  * @author Gabriel Dias Santiago

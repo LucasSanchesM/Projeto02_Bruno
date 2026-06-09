@@ -6,7 +6,7 @@ package stubs;
 
 import domain.Falha;
 import model.DadosFalha;
-import state.EstadoFalha;
+import services.EstadoFalha;
 
 /**
  * Stub (classe Falha)
