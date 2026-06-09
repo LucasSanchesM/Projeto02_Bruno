@@ -1,4 +1,9 @@
 package factory;
+
+import services.FabricaFuncionarios;
+import model.Operador;
+import services.Funcionario;
+
 /**
  * Responsavel pela criação de Operadores, é uma subclasse de FabricaFuncionarios
  * @author Lucas Sanches Marcilio Pereira

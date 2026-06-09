@@ -1,4 +1,6 @@
-package factory;
+package services;
+
+import services.Funcionario;
 
 /**
  * Usada de base para criação de outras fabricas

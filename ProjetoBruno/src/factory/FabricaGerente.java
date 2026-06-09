@@ -1,5 +1,10 @@
 
 package factory;
+
+import services.FabricaFuncionarios;
+import model.Gerente;
+import services.Funcionario;
+
 /**
  * Responsavel pela criação de gerentes, é uma subclasse de FabricaFuncionarios
  * @author Lucas Sanches Marcilio Pereira
