@@ -124,7 +124,10 @@ public class Falha {
             o.atualizar(this);
         }
     }
-      
+    
+    public void atualizarHorasRestantes(int horas){
+        this.horasRestantesSLA = horas;
+    }
     
     
 }

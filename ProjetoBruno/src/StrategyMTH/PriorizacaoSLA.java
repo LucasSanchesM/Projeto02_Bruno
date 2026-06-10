@@ -28,6 +28,6 @@ public class PriorizacaoSLA implements Priorizacao {
  */
     @Override
     public String getNivel() {
-        return (horasRestantes <= 2) ? "Nivel Critico" : "alto";
+        return (horasRestantes <= 2) ? "Nivel Critico" : "Nivel Alto";
     }
 }

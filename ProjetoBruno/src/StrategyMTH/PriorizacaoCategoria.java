@@ -33,6 +33,6 @@ public class PriorizacaoCategoria implements Priorizacao {
         if (falha != null && "Eletrica".equalsIgnoreCase(falha.getCategoria())) {
             return "Nivel Critico";
         }
-        return "alto";
+        return "Nivel Alto";
     }
 }
