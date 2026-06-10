@@ -26,7 +26,10 @@ public class FacadeGestaoFalha {
      * @return Falha criada.
      */
     
-     public FacadeGestaoFalha() {
+     public FacadeGestaoFalha(Falha falha) {
+         
+        this.falha = falha;
+    
     }
      
      /**
