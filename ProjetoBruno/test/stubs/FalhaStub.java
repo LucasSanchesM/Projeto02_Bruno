@@ -34,36 +34,56 @@ public class FalhaStub extends Falha {
  * de chamadas, etc.). A verificacao nos testes e feita exclusivamente pelo
  * ESTADO resultante obtido via getEstadoAtual().</p>
  */
+    
     public FalhaStub(DadosFalha dados) { 
         super(dados); 
         this.dadosInternos = dados; 
     } 
+    /**
+     * 
+     * @return Retorna o valor do tipo armazenado em dados internos 
+     */
     @Override
     public String getCategoria() {
         return this.dadosInternos.getTipo();
     }
-    
+    /**
+     * 
+     * @param horas  define as horas restantes
+     */
     @Override
     public void atualizarHorasRestantes(int horas){
         this.horasRestantes = horas;
     }
-    
+    /**
+     * 
+     * @return Retorna a hora definida 
+     */
     @Override
     public int getHorasRestantesSLA(){
         return horasRestantes;
     }
-    
+    /**
+     * 
+     * @param maquinaParada Define a maquina como parada 
+     */
     @Override
     public void setMaquinaParada(boolean maquinaParada) {
         this.maquinaParada = maquinaParada;
     }
-
+/**
+ * 
+ * @return Reorna o estado da maquina 
+ */
     @Override
     public boolean isMaquinaParada() {
         
         return this.maquinaParada;
     }
-
+/**
+ * 
+ * @return Retorna o estado atual 
+ */
     @Override
     public EstadoFalha getEstadoAtual() {
         return estadoAtual;
@@ -75,7 +95,10 @@ public class FalhaStub extends Falha {
             o.atualizar(this);
         }
     }
-   
+/**
+ * 
+ * @param novoEstado define um novo estado  
+ */   
     @Override 
     public void setEstado(EstadoFalha novoEstado) { 
         this.estadoAtual = novoEstado; 

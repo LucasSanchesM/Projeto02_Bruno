@@ -4,7 +4,7 @@ import services.Priorizacao;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import StrategyMTH.*;
-import domain.Falha; 
+ 
 import stubs.DadosFalhaStub;
 import stubs.FalhaStub;
 
