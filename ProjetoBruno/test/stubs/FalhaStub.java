@@ -2,12 +2,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package stubs;
-
+package stubs; 
+ 
+import domain.Falha; 
+import model.DadosFalha; 
+import services.EstadoFalha; 
 import Observer.ObservadorFalha;
 import domain.Falha;
 import model.DadosFalha;
 import services.EstadoFalha;
+ 
+public class FalhaStub extends Falha { 
+ 
+    private EstadoFalha estadoAtual; 
+    private boolean maquinaParada;
+    private int horasRestantes = 24;
+    public String categoria;
+    // ALTERAÇÃO: Atributo adicionado para guardar a referência do stub de dados recebido
+    private final DadosFalha dadosInternos; 
+
 
 /**
  * Stub (classe Falha)
@@ -21,18 +34,34 @@ import services.EstadoFalha;
  * de chamadas, etc.). A verificacao nos testes e feita exclusivamente pelo
  * ESTADO resultante obtido via getEstadoAtual().</p>
  */
-
-public class FalhaStub extends Falha {
-
-    private EstadoFalha estadoAtual;
-
-    public FalhaStub(DadosFalha dados) {
-        super(dados);
+    public FalhaStub(DadosFalha dados) { 
+        super(dados); 
+        this.dadosInternos = dados; 
+    } 
+    @Override
+    public String getCategoria() {
+        return this.dadosInternos.getTipo();
+    }
+    
+    @Override
+    public void atualizarHorasRestantes(int horas){
+        this.horasRestantes = horas;
+    }
+    
+    @Override
+    public int getHorasRestantesSLA(){
+        return horasRestantes;
+    }
+    
+    @Override
+    public void setMaquinaParada(boolean maquinaParada) {
+        this.maquinaParada = maquinaParada;
     }
 
     @Override
-    public void setEstado(EstadoFalha novoEstado) {
-        this.estadoAtual = novoEstado;
+    public boolean isMaquinaParada() {
+        
+        return this.maquinaParada;
     }
 
     @Override
@@ -46,4 +75,11 @@ public class FalhaStub extends Falha {
             o.atualizar(this);
         }
     }
+   
+    @Override 
+    public void setEstado(EstadoFalha novoEstado) { 
+        this.estadoAtual = novoEstado; 
+    } 
+ 
 }
+

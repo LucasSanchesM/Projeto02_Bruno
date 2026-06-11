@@ -1,4 +1,7 @@
 package StrategyMTH;
+
+import domain.Falha;
+
 /**
  * Classe que implementa a interface priorização sendo um dos possíveis casos
  * @author Thalyson
@@ -7,12 +10,13 @@ package StrategyMTH;
  */
 public class Impacto implements Priorizacao {
     private boolean maquinaParada;
-/**
- * 
- * @param maquinaParada booleano de estado da maquina
- */
-    public Impacto(boolean maquinaParada) {
-        this.maquinaParada = maquinaParada;
+
+    /**
+     * 
+     * @param falha Parametros da falha para coleta de estado de maquina
+     */
+    public Impacto(Falha falha) {
+        this.maquinaParada = falha.isMaquinaParada();
     }
     /**
      * 
@@ -29,6 +33,6 @@ public class Impacto implements Priorizacao {
    */
     @Override
     public String getNivel() {
-        return maquinaParada ? "Nivel Critico" : "alto";
+        return maquinaParada ? "Nivel Critico" : "Nivel Alto";
     }
 }

@@ -21,10 +21,16 @@ import model.DadosFalha;
  * @since 2026-06-08
  */
 public class DadosFalhaStub extends DadosFalha {
-
+    String categoria;
+    public DadosFalhaStub(String categoria){
+        super("Falha", "Mecanica", 1);
+        this.categoria = categoria;
+    }
+    
     public DadosFalhaStub() {
         // valores do super sao irrelevantes: serao sobrescritos pelos getters
         super("Falha", "Mecanica", 1);
+        this.categoria = "Mecanica";
     }
 
     @Override
@@ -34,11 +40,12 @@ public class DadosFalhaStub extends DadosFalha {
 
     @Override
     public String getTipo() {
-        return "Mecanica (stub)";
+        return categoria;
     }
 
     @Override
     public int getIdMaquina() {
         return 99; // valor "marcado" para evidenciar que vem do stub, nao do real
     }
+    
 }
