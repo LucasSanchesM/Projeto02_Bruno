@@ -5,40 +5,40 @@
 package facadeTest;
 
 /**
- * Teste responsável por validar o fluxo completo
- * do ciclo de vida de uma falha.
+ * Teste do fluxo de gerenciamento de falhas pela fachada.
  *
- * Verifica a execução sequencial das operações
- * abrirFalha, iniciarAnalise, aprovarFalha e
- * atenderFalha, garantindo que o estado final
- * seja EM_ATENDIMENTO.
+ * Verifica se a sequência de operações resulta no estado final esperado.
  *
  * @author Mirel
  */
 
-import domain.Falha;
 import facade.FacadeGestaoFalha;
-import model.DadosFalha;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import stubs.DadosFalhaStub;
+import stubs.FalhaFacadeStub;
 
 public class FacadeFluxoFalhaTest {
-    
+      
+    /**
+    Verifica se uma falha chega ao estado
+    EM_ATENDIMENTO após a execução do fluxo.
+    */
     @Test
     public void deveConcluirFluxoDeFalhaComSucessoAteAtendimento() {
         
-        int idFalha = 1;
-        int idTecnico = 1;
-        
-        FacadeGestaoFalha facade = new FacadeGestaoFalha();
+    int idFalha = 1;
+    int idTecnico = 1;
 
-        Falha falha = facade.abrirFalha(new DadosFalha("Motor parou", "Mecanica", 1));
+    FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
 
-        facade.iniciarAnaliseFalha(idFalha);
-        facade.aprovarFalha(idFalha);
-        facade.atenderFalha(idFalha, idTecnico);
-        
-        assertEquals("EM_ATENDIMENTO", falha.getEstadoAtual().nome());
-    }
+    FacadeGestaoFalha facade = new FacadeGestaoFalha(stub);
+
+    facade.iniciarAnaliseFalha(idFalha);
+    facade.aprovarFalha(idFalha);
+    facade.atenderFalha(idFalha, idTecnico);
+
+    assertEquals("EM_ATENDIMENTO", stub.getEstadoAtual().nome());
     
+    }
 }
