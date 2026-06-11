@@ -18,26 +18,32 @@ import model.DadosFalha;
  */
 public class FacadeGestaoFalha {
     
-    private Falha falha;
     /**
-     * Abre uma nova falha no estado inicial ABERTO.
-     *
-     * @param dados Dados necessários para criação da falha.
-     * @return Falha criada.
-     */
+    * Falha atualmente gerenciada pela fachada.
+    */
+    private Falha falha;
     
+    /**
+    * Cria uma fachada utilizando uma falha já existente.
+    *
+    * Utilizado principalmente em testes unitários para
+    * injeção de stubs ou objetos simulados.
+    *
+    * @param falha falha a ser controlada pela fachada.
+    */
      public FacadeGestaoFalha(Falha falha) {
          
         this.falha = falha;
     
     }
      
+    /**
+    * Cria uma fachada sem uma falha associada.
+    *
+    * A falha será criada posteriormente pelo método abrirFalha().
+    */
      public FacadeGestaoFalha(){
          
-     }
-     
-     public Falha getFalha(){
-         return falha;
      }
      
      /**
@@ -80,16 +86,18 @@ public class FacadeGestaoFalha {
     }
     
     /**
-     * Encerra a falha indicada.
-     *
-     * @param idFalha identificador da falha a encerrar.
-     */
-    
+    * Encerra a falha atualmente gerenciada pela fachada.
+    */
     public void encerrarFalha() {
         System.out.println("Encerrando falha...");
         falha.encerrar();
     }
     
+    /**
+    * Inicia a análise da falha indicada.
+    *
+    * @param idFalha identificador da falha.
+    */
     public void iniciarAnaliseFalha(int idFalha) {
     System.out.println("Iniciando analise da falha..." + idFalha);
     falha.iniciarAnalise();
