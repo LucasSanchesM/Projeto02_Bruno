@@ -29,7 +29,7 @@ public class DadosFalhaStub extends DadosFalha {
 
     @Override
     public String getDescricao() {
-        return "Falha simulada (stub)";
+        return "Motor parou";
     }
 
     @Override
