@@ -5,28 +5,25 @@
 package facadeTest;
 
 /**
- * Teste responsável por validar o fluxo completo
- * do ciclo de vida de uma falha.
+ * Teste do fluxo de gerenciamento de falhas pela fachada.
  *
- * Verifica a execução sequencial das operações
- * abrirFalha, iniciarAnalise, aprovarFalha e
- * atenderFalha, garantindo que o estado final
- * seja EM_ATENDIMENTO.
+ * Verifica se a sequência de operações resulta no estado final esperado.
  *
  * @author Mirel
  */
 
-import domain.Falha;
 import facade.FacadeGestaoFalha;
-import model.DadosFalha;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import stubs.DadosFalhaStub;
 import stubs.FalhaFacadeStub;
-import stubs.FalhaStub;
 
 public class FacadeFluxoFalhaTest {
-    
+      
+    /**
+    Verifica se uma falha chega ao estado
+    EM_ATENDIMENTO após a execução do fluxo.
+    */
     @Test
     public void deveConcluirFluxoDeFalhaComSucessoAteAtendimento() {
         

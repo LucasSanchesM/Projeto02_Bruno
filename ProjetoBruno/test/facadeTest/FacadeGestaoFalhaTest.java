@@ -8,21 +8,21 @@ import domain.Falha;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import facade.FacadeGestaoFalha;
-import model.DadosFalha;
 import stubs.DadosFalhaStub;
 import stubs.FalhaFacadeStub;
-import stubs.FalhaStub;
 
 /**
  * Teste responsável por validar a abertura de uma falha
  * utilizando a fachada FacadeGestaoFalha.
  *
- * Verifica se a falha é criada corretamente
- * e se inicia no estado ABERTO e também valida se ele realmente cria com os dados dos quais estamos passando
- *
+ *Verificam a abertura de falhas e as transições de estado realizadas pela fachada.
  * @author Mirel
  */
 public class FacadeGestaoFalhaTest {
+  
+    /**
+    Verifica a abertura de uma falha.
+    */
     @Test
     public void deveAbrirFalhaComSucesso() {
 
@@ -34,6 +34,9 @@ public class FacadeGestaoFalhaTest {
         
     }
     
+    /**
+    Verifica a transição para EM_ANALISE.
+    */
     @Test
     public void iniciarAnaliseFalhaDeveLevarParaEmAnalise() {
         FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
@@ -44,6 +47,9 @@ public class FacadeGestaoFalhaTest {
         assertEquals("EM_ANALISE", stub.getEstadoAtual().nome());
     }
 
+    /**
+    Verifica a transição para APROVADO.
+    */
     @Test
     public void aprovarFalhaDeveLevarParaAprovado() {
         FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
@@ -54,6 +60,9 @@ public class FacadeGestaoFalhaTest {
         assertEquals("APROVADO", stub.getEstadoAtual().nome());
     }
 
+    /**
+    Verifica a transição para EM_ATENDIMENTO.
+    */
     @Test
     public void atenderFalhaDeveLevarParaEmAtendimento() {
         FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
@@ -64,6 +73,9 @@ public class FacadeGestaoFalhaTest {
         assertEquals("EM_ATENDIMENTO", stub.getEstadoAtual().nome());
     }
 
+    /**
+    Verifica a transição para ENCERRADO.
+    */
     @Test
     public void encerrarFalhaDeveLevarParaEncerrado() {
         FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
@@ -75,3 +87,4 @@ public class FacadeGestaoFalhaTest {
     }
     
 }
+    
