@@ -10,11 +10,19 @@ public class FalhaStub extends Falha {
     private boolean maquinaParada;
     private int horasRestantes = 24;
     public String categoria;
+    // ALTERAÇÃO: Atributo adicionado para guardar a referência do stub de dados recebido
+    private final DadosFalha dadosInternos; 
 
     public FalhaStub(DadosFalha dados) { 
         super(dados); 
+        this.dadosInternos = dados; 
     } 
     
+    
+    @Override
+    public String getCategoria() {
+        return this.dadosInternos.getTipo();
+    }
     
     @Override
     public void atualizarHorasRestantes(int horas){
@@ -28,13 +36,13 @@ public class FalhaStub extends Falha {
     
     @Override
     public void setMaquinaParada(boolean maquinaParada) {
-        // Ignora qualquer lógica da classe real e armazena localmente
+        
         this.maquinaParada = maquinaParada;
     }
 
     @Override
     public boolean isMaquinaParada() {
-        // Garante que o motor de priorização leia o valor do stub
+        
         return this.maquinaParada;
     }
  
@@ -47,6 +55,4 @@ public class FalhaStub extends Falha {
     public EstadoFalha getEstadoAtual() { 
         return estadoAtual; 
     } 
-    
-    
 }
