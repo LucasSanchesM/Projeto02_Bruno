@@ -20,18 +20,11 @@ public class ObserverStub implements ObservadorFalha{
     public int getVezesNotificado(){
         return vezesNotificado;
     }
-    
-@Override
-        public void atualizar(FalhaStub f) {
-            vezesNotificado++;
-        }
-
-        
-        /**
     @Override
-    public void atualizar(Falha falha) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void atualizar(Falha f) {
+            vezesNotificado++;
     }
-
+        
+        
     
 }

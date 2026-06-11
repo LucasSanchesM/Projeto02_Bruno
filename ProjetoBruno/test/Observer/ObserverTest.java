@@ -49,9 +49,9 @@ public class ObserverTest {
         ObserverStub obs1 = new ObserverStub();
         ObserverStub obs2 = new ObserverStub();
         ObserverStub obs3 = new ObserverStub();
-        f.adicionarObservador((ObservadorFalha) obs1);
-        f.adicionarObservador((ObservadorFalha) obs2);
-        f.adicionarObservador((ObservadorFalha) obs3);
+        f.adicionarObservador(obs1);
+        f.adicionarObservador(obs2);
+        f.adicionarObservador(obs3);
 
         f.notificarObservadores();
 
@@ -70,8 +70,8 @@ public class ObserverTest {
     public void naoDeveNotificarObservadorRemovido() {
         FalhaStub f = new FalhaStub(new DadosFalhaStub());
         ObserverStub obs = new ObserverStub();
-        f.adicionarObservador((ObservadorFalha) obs);
-        f.removerObservador((ObservadorFalha) obs);
+        f.adicionarObservador(obs);
+        f.removerObservador(obs);
 
         f.notificarObservadores();
 

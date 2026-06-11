@@ -9,11 +9,21 @@
             <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/src/facade/FacadeGestaoFalha.java</file>
             <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/test/facadeTest/FacadeGestaoFalhaTest.java</file>
             <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/src/model/DadosFalha.java</file>
-            <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/test/main/EstadoFalhaTest.java</file>
             <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/src/state/EstadoAprovado.java</file>
             <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/src/state/EstadoConcluido.java</file>
             <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/src/state/EstadoEncerrado.java</file>
             <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/src/state/EstadoEmAtendimento.java</file>
+            <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/test/stubs/FalhaStub.java</file>
+            <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/src/Observer/MonitorSLA.java</file>
+            <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/src/Observer/NotificadorTecnico.java</file>
+            <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/src/Observer/ObservadorFalha.java</file>
+            <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/src/Observer/PainelProducao.java</file>
+            <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/src/model/Prioridade.java</file>
+            <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/test/Observer/ObserverTest.java</file>
+            <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/test/stubs/ObserverStub.java</file>
+            <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/test/stubs/FabricaOperadorStub.java</file>
+            <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/test/stubs/FabricaGerenteStub.java</file>
+            <file>file:/C:/Users/vasco/OneDrive/Documentos/ProjetoTesteBruno/ProjetoBruno/test/stubs/FabricaTecnicoStub.java</file>
         </group>
     </open-files>
 </project-private>
