@@ -9,6 +9,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import facade.FacadeGestaoFalha;
 import model.DadosFalha;
+import stubs.DadosFalhaStub;
+import stubs.FalhaFacadeStub;
+import stubs.FalhaStub;
 
 /**
  * Teste responsável por validar a abertura de uma falha
@@ -25,10 +28,50 @@ public class FacadeGestaoFalhaTest {
 
         FacadeGestaoFalha facade = new FacadeGestaoFalha();
 
-        Falha falha = facade.abrirFalha(new DadosFalha("Motor parou", "Mêcanica", 1));
-        
+        Falha falha = facade.abrirFalha(new DadosFalhaStub());
         assertEquals("ABERTO", falha.getEstadoAtual().nome());
         assertEquals("Motor parou", falha.getTitulo());
         
     }
+    
+    @Test
+    public void iniciarAnaliseFalhaDeveLevarParaEmAnalise() {
+        FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
+        FacadeGestaoFalha facade = new FacadeGestaoFalha(stub);
+
+        facade.iniciarAnaliseFalha(1);
+
+        assertEquals("EM_ANALISE", stub.getEstadoAtual().nome());
+    }
+
+    @Test
+    public void aprovarFalhaDeveLevarParaAprovado() {
+        FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
+        FacadeGestaoFalha facade = new FacadeGestaoFalha(stub);
+
+        facade.aprovarFalha(1);
+
+        assertEquals("APROVADO", stub.getEstadoAtual().nome());
+    }
+
+    @Test
+    public void atenderFalhaDeveLevarParaEmAtendimento() {
+        FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
+        FacadeGestaoFalha facade = new FacadeGestaoFalha(stub);
+
+        facade.atenderFalha(1, 1);
+
+        assertEquals("EM_ATENDIMENTO", stub.getEstadoAtual().nome());
+    }
+
+    @Test
+    public void encerrarFalhaDeveLevarParaEncerrado() {
+        FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
+        FacadeGestaoFalha facade = new FacadeGestaoFalha(stub);
+
+        facade.encerrarFalha();
+
+        assertEquals("ENCERRADO", stub.getEstadoAtual().nome());
+    }
+    
 }
