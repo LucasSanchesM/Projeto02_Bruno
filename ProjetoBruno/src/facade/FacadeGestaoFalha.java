@@ -32,6 +32,14 @@ public class FacadeGestaoFalha {
     
     }
      
+     public FacadeGestaoFalha(){
+         
+     }
+     
+     public Falha getFalha(){
+         return falha;
+     }
+     
      /**
      * Abre uma nova falha no estado inicial ABERTO.
      *
