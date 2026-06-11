@@ -22,7 +22,7 @@ public class Falha {
     private int horasRestantesSLA = 24;
     private boolean maquinaParada;
     private Prioridade prioridade;
-    private final List<ObservadorFalha> observadores = new ArrayList<>();
+    public final List<ObservadorFalha> observadores = new ArrayList<>();
 
     /**
      * 

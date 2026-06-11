@@ -4,6 +4,7 @@
  */
 package stubs;
 
+import Observer.ObservadorFalha;
 import domain.Falha;
 import model.DadosFalha;
 import services.EstadoFalha;
@@ -37,5 +38,12 @@ public class FalhaStub extends Falha {
     @Override
     public EstadoFalha getEstadoAtual() {
         return estadoAtual;
+    }
+    
+    @Override
+   public void notificarObservadores() {
+        for (ObservadorFalha o : observadores) {
+            o.atualizar(this);
+        }
     }
 }
