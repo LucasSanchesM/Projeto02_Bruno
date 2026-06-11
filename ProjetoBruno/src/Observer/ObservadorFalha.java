@@ -16,5 +16,7 @@ import domain.Falha;
  * @author Ana Livia Vasconcellos
  */
 public interface ObservadorFalha {
+
+    public static Object vezesNotificado = null;
     void atualizar(Falha falha);
 }
