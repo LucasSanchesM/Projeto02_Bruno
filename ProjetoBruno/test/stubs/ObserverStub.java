@@ -4,7 +4,7 @@
  */
 package stubs;
 
-import Observer.ObservadorFalha;
+import services.ObservadorFalha;
 import domain.Falha;
 
 /**

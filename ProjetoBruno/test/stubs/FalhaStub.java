@@ -7,7 +7,7 @@ package stubs;
 import domain.Falha; 
 import model.DadosFalha; 
 import services.EstadoFalha; 
-import Observer.ObservadorFalha;
+import services.ObservadorFalha;
 import domain.Falha;
 import model.DadosFalha;
 import services.EstadoFalha;

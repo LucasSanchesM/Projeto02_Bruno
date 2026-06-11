@@ -1,5 +1,6 @@
 package StrategyMTH;
 
+import services.Priorizacao;
 import domain.Falha;
 /**
  * Implementa a interface de priorização e unindo dados da priorização por categoria

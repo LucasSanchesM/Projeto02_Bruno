@@ -1,5 +1,7 @@
 package StrategyMTH;
 
+import services.Priorizacao;
+
 /**
  * Lida com a priorização independente do tipo
  * @author Thalyson

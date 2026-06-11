@@ -1,5 +1,6 @@
 package StrategyMTH;
 
+import services.Priorizacao;
 import domain.Falha;
 
 /**

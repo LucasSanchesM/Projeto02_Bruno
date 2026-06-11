@@ -25,7 +25,7 @@ public class FacadeFluxoFalhaTest {
     EM_ATENDIMENTO após a execução do fluxo.
     */
     @Test
-    public void deveConcluirFluxoDeFalhaComSucessoAteAtendimento() {
+    public void ct17_deveConcluirFluxoDeFalhaComSucessoAteAtendimento() {
         
     int idFalha = 1;
     int idTecnico = 1;

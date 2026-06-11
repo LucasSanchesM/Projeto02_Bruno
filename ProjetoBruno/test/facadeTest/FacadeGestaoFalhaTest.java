@@ -24,7 +24,7 @@ public class FacadeGestaoFalhaTest {
     Verifica a abertura de uma falha.
     */
     @Test
-    public void deveAbrirFalhaComSucesso() {
+    public void ct18_deveAbrirFalhaComSucesso() {
 
         FacadeGestaoFalha facade = new FacadeGestaoFalha();
 
@@ -38,7 +38,7 @@ public class FacadeGestaoFalhaTest {
     Verifica a transição para EM_ANALISE.
     */
     @Test
-    public void iniciarAnaliseFalhaDeveLevarParaEmAnalise() {
+    public void ct19_iniciarAnaliseFalhaDeveLevarParaEmAnalise() {
         FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
         FacadeGestaoFalha facade = new FacadeGestaoFalha(stub);
 
@@ -51,7 +51,7 @@ public class FacadeGestaoFalhaTest {
     Verifica a transição para APROVADO.
     */
     @Test
-    public void aprovarFalhaDeveLevarParaAprovado() {
+    public void ct20_aprovarFalhaDeveLevarParaAprovado() {
         FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
         FacadeGestaoFalha facade = new FacadeGestaoFalha(stub);
 
@@ -64,7 +64,7 @@ public class FacadeGestaoFalhaTest {
     Verifica a transição para EM_ATENDIMENTO.
     */
     @Test
-    public void atenderFalhaDeveLevarParaEmAtendimento() {
+    public void ct21_atenderFalhaDeveLevarParaEmAtendimento() {
         FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
         FacadeGestaoFalha facade = new FacadeGestaoFalha(stub);
 
@@ -77,7 +77,7 @@ public class FacadeGestaoFalhaTest {
     Verifica a transição para ENCERRADO.
     */
     @Test
-    public void encerrarFalhaDeveLevarParaEncerrado() {
+    public void ct22_encerrarFalhaDeveLevarParaEncerrado() {
         FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
         FacadeGestaoFalha facade = new FacadeGestaoFalha(stub);
 

@@ -1,6 +1,6 @@
 package domain;
 
-import Observer.ObservadorFalha;
+import services.ObservadorFalha;
 import java.util.ArrayList;
 import java.util.List;
 import model.DadosFalha;

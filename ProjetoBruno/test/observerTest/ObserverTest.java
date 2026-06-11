@@ -1,5 +1,6 @@
-package Observer;
+package observerTest;
 
+import services.ObservadorFalha;
 import domain.Falha;
 import model.DadosFalha;
 import org.junit.Test;
@@ -27,7 +28,7 @@ public class ObserverTest {
      * Espera-se que o observador seja notificado uma única vez.
      */
     @Test
-    public void deveNotificarObservadorRegistrado() {
+    public void ct11_deveNotificarObservadorRegistrado() {
         FalhaStub f = new FalhaStub(new DadosFalhaStub());
         ObserverStub obs = new ObserverStub();
         f.adicionarObservador((ObservadorFalha) obs);
@@ -44,7 +45,7 @@ public class ObserverTest {
      * Espera-se que cada observador seja notificado uma única vez.
      */
     @Test
-    public void deveNotificarMultiplosObservadores() {
+    public void ct12_deveNotificarMultiplosObservadores() {
         FalhaStub f = new FalhaStub(new DadosFalhaStub());
         ObserverStub obs1 = new ObserverStub();
         ObserverStub obs2 = new ObserverStub();
@@ -67,7 +68,7 @@ public class ObserverTest {
      * Espera-se que o observador não seja notificado nenhuma vez.
      */
     @Test
-    public void naoDeveNotificarObservadorRemovido() {
+    public void ct13_naoDeveNotificarObservadorRemovido() {
         FalhaStub f = new FalhaStub(new DadosFalhaStub());
         ObserverStub obs = new ObserverStub();
         f.adicionarObservador(obs);

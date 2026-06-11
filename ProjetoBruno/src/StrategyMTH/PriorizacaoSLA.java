@@ -1,4 +1,7 @@
 package StrategyMTH;
+
+import services.Priorizacao;
+
 /**
  * Implementa a interface de priorização e unindo dados da priorização por SLA
  * @author Thalyson

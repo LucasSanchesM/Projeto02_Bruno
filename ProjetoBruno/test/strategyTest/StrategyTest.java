@@ -1,5 +1,6 @@
-package Strategy;
+package strategyTest;
 
+import services.Priorizacao;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import StrategyMTH.*;
@@ -17,7 +18,7 @@ import stubs.FalhaStub;
 public class StrategyTest {
     
     @Test
-    public void deveRetornarNivelCritico() {
+    public void ct05_deveRetornarNivelCritico() {
         FalhaStub falha = new FalhaStub(new DadosFalhaStub());
         falha.setMaquinaParada(true);
         
@@ -28,7 +29,7 @@ public class StrategyTest {
     }
     
     @Test
-    public void deveRetornarNivelAlto() {
+    public void ct06_deveRetornarNivelAlto() {
         FalhaStub falha = new FalhaStub(new DadosFalhaStub());
         falha.setMaquinaParada(false); 
         
@@ -39,7 +40,7 @@ public class StrategyTest {
     }
     
     @Test
-    public void deveRetornarNivelCriticoPorSla(){
+    public void ct07_deveRetornarNivelCriticoPorSla(){
         FalhaStub falha = new FalhaStub(new DadosFalhaStub());
         falha.atualizarHorasRestantes(1); 
         
@@ -50,7 +51,7 @@ public class StrategyTest {
     }
     
     @Test
-    public void deveRetornarNivelAltoPorSla(){
+    public void ct08_deveRetornarNivelAltoPorSla(){
         FalhaStub falha = new FalhaStub(new DadosFalhaStub());
         
         falha.atualizarHorasRestantes(24); 
@@ -62,7 +63,7 @@ public class StrategyTest {
     }
     
     @Test
-    public void deveRetornarNivelCriticoCategoria(){
+    public void ct09_deveRetornarNivelCriticoCategoria(){
         
         FalhaStub falha = new FalhaStub(new DadosFalhaStub("Eletrica"));
         
@@ -73,7 +74,7 @@ public class StrategyTest {
     }
     
      @Test
-    public void deveRetornarNivelAltoCategoria(){
+    public void ct10_deveRetornarNivelAltoCategoria(){
         
         FalhaStub falha = new FalhaStub(new DadosFalhaStub());
         

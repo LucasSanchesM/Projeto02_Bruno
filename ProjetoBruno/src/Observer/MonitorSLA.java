@@ -4,6 +4,7 @@
  */
 package Observer;
 
+import services.ObservadorFalha;
 import domain.Falha;
 
 /**
