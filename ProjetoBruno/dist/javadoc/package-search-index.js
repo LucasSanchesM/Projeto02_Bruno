@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html","k":"18"},{"l":"domain"},{"l":"facade"},{"l":"facadeTest"},{"l":"factory"},{"l":"factoryTest"},{"l":"model"},{"l":"Observer"},{"l":"observerTest"},{"l":"services"},{"l":"state"},{"l":"stateTest"},{"l":"StrategyMTH"},{"l":"strategyTest"},{"l":"stubs"}];updateSearchResults();
