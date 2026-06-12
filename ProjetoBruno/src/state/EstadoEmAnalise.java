@@ -10,6 +10,8 @@ import domain.Falha;
 /**
  * Esta classe é uma das possibilidades de estados - EstadoEmAnalise
  * @author Gabriel Dias Santiago
+ * @since 2026
+ * @version 1.0.0
  */
 public class EstadoEmAnalise implements EstadoFalha {
 

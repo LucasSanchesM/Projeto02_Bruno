@@ -8,10 +8,14 @@ import services.EstadoFalha;
 
 /**
  * Esta classe é uma das possibilidades de estados - EstadoEncerrado
+ *
  * @author Gabriel Dias Santiago
+ * @since 2026
+ * @version 1.0.0
  */
 public class EstadoEncerrado implements EstadoFalha {
-    /** 
+
+    /**
      * @return Retorna qual estado é este - Encerrado
      */
     @Override

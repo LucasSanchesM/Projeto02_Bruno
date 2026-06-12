@@ -8,8 +8,12 @@ import services.ObservadorFalha;
 import domain.Falha;
 
 /**
- *
- * @author vasco
+ * Esta classe é um dos modelos de observadores disponiveis.
+ * Possui o intuito de notificação voltada ao tecnico
+ * @author Ana Livia Vasconcellos
+ * @since 2026
+ * @version 1.0.0
+ * 
  */
 public class NotificadorTecnico implements ObservadorFalha {
     

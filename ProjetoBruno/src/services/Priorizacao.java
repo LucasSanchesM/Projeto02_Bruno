@@ -5,11 +5,15 @@
 package services;
 
 /**
- * Interface para priorização
+ * Interface para priorização.
+ *
  * @author Thalyson
+ * @since 2026
+ * @version 1.0.0
  */
 public interface Priorizacao {
-    
+
     String getNome();
+
     String getNivel();
 }

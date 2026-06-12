@@ -5,7 +5,7 @@ import domain.Falha;
 /**
  * Implementa a interface de priorização e unindo dados da priorização por categoria
  * @author Thalyson
- * @since 04-06-2026
+ * @since 2026
  * @version 1.0.0
  */
 public class PriorizacaoCategoria implements Priorizacao {

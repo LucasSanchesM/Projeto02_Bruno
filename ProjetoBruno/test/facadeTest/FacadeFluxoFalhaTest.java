@@ -4,29 +4,29 @@
  */
 package facadeTest;
 
-/**
- * Teste do fluxo de gerenciamento de falhas pela fachada.
- *
- * Verifica se a sequência de operações resulta no estado final esperado.
- *
- * @author Mirel
- */
-
 import facade.FacadeGestaoFalha;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import stubs.DadosFalhaStub;
 import stubs.FalhaFacadeStub;
 
+/**
+ * Teste do fluxo de gerenciamento de falhas pela fachada. Verifica se a
+ * sequência de operações resulta no estado final esperado.
+ *
+ * @author Mirella
+ * @since 2026
+ * @version 1.0.0
+ */
 public class FacadeFluxoFalhaTest {
-      
+
     /**
-    Verifica se uma falha chega ao estado
-    EM_ATENDIMENTO após a execução do fluxo.
-    */
+     * Verifica se uma falha chega ao estado "EM_ATENDIMENTO" após a execução do
+     * fluxo.
+     */
     @Test
     public void ct17_deveConcluirFluxoDeFalhaComSucessoAteAtendimento() {
-        
+
         int idFalha = 1;
         int idTecnico = 1;
 

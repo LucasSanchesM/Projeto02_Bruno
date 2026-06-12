@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package stubs;
+
 import domain.Falha;
 import model.DadosFalha;
 import services.EstadoFalha;
@@ -11,62 +12,66 @@ import state.EstadoAprovado;
 import state.EstadoEmAtendimento;
 import state.EstadoEncerrado;
 
-
 /**
- *Classe herdada de Falha, responsável por lidar com o Facade
- * @author Mirel
+ * Classe herdada de Falha, responsável por lidar com o Facade
+ *
+ * @author Mirella
+ * @since 2026
+ * @version 1.0.0
  */
-public class FalhaFacadeStub extends Falha{
-    
+public class FalhaFacadeStub extends Falha {
+
     private EstadoFalha estadoAtual;
 
     /**
-    Cria uma instância do stub utilizando os dados informados.
-    @param dados dados utilizados na criação da falha.
-     * @param estado define um estado base para testes
-    */
+     * Cria uma instância do stub utilizando os dados informados.
+     *
+     * @param dados dados utilizados na criação da falha.
+     */
     public FalhaFacadeStub(DadosFalha dados) {
         super(dados);
     }
+
     /**
-    Simula a transição para o estado EM_ANALISE.
-    */
+     * Simula a transição para o estado EM_ANALISE.
+     */
     @Override
     public void iniciarAnalise() {
-    this.estadoAtual = new EstadoEmAnalise();
+        this.estadoAtual = new EstadoEmAnalise();
     }
 
     /**
-    Simula a transição para o estado APROVADO.
-    */
+     * Simula a transição para o estado APROVADO.
+     */
     @Override
     public void aprovar() {
-    this.estadoAtual = new EstadoAprovado();
+        this.estadoAtual = new EstadoAprovado();
     }
 
     /**
-    Simula a transição para o estado EM_ATENDIMENTO.
-    */
+     * Simula a transição para o estado EM_ATENDIMENTO.
+     */
     @Override
     public void iniciarAtendimento() {
-    this.estadoAtual = new EstadoEmAtendimento();
+        this.estadoAtual = new EstadoEmAtendimento();
     }
 
     /**
-    Simula a transição para o estado ENCERRADO.
-    */
+     * Simula a transição para o estado ENCERRADO.
+     */
     @Override
     public void encerrar() {
         this.estadoAtual = new EstadoEncerrado();
     }
 
     /**
-    Retorna o estado atual armazenado pelo stub.
-    @return estado atual da falha.
-    */
+     * Retorna o estado atual armazenado pelo stub.
+     *
+     * @return estado atual da falha.
+     */
     @Override
     public EstadoFalha getEstadoAtual() {
-    return estadoAtual;
+        return estadoAtual;
     }
-    
+
 }

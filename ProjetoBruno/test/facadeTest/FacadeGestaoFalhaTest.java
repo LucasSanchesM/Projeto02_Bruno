@@ -12,17 +12,21 @@ import stubs.DadosFalhaStub;
 import stubs.FalhaFacadeStub;
 
 /**
- * Teste responsável por validar a abertura de uma falha
- * utilizando a fachada FacadeGestaoFalha.
+ * Teste responsável por validar a abertura de uma falha utilizando a fachada
+ * FacadeGestaoFalha.
  *
- *Verificam a abertura de falhas e as transições de estado realizadas pela fachada.
- * @author Mirel
+ * Verificam a abertura de falhas e as transições de estado realizadas pela
+ * fachada.
+ *
+ * @author Mirella
+ * @since 2026
+ * @version 1.0.0
  */
 public class FacadeGestaoFalhaTest {
-  
+
     /**
-    Verifica a abertura de uma falha.
-    */
+     * Verifica a abertura de uma falha.
+     */
     @Test
     public void ct18_deveAbrirFalhaComSucesso() {
 
@@ -31,12 +35,12 @@ public class FacadeGestaoFalhaTest {
         Falha falha = facade.abrirFalha(new DadosFalhaStub());
         assertEquals("ABERTO", falha.getEstadoAtual().nome());
         assertEquals("Motor parou", falha.getTitulo());
-        
+
     }
-    
+
     /**
-    Verifica a transição para EM_ANALISE.
-    */
+     * Verifica a transição para EM_ANALISE.
+     */
     @Test
     public void ct19_iniciarAnaliseFalhaDeveLevarParaEmAnalise() {
         FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
@@ -48,8 +52,8 @@ public class FacadeGestaoFalhaTest {
     }
 
     /**
-    Verifica a transição para APROVADO.
-    */
+     * Verifica a transição para APROVADO.
+     */
     @Test
     public void ct20_aprovarFalhaDeveLevarParaAprovado() {
         FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
@@ -61,8 +65,8 @@ public class FacadeGestaoFalhaTest {
     }
 
     /**
-    Verifica a transição para EM_ATENDIMENTO.
-    */
+     * Verifica a transição para EM_ATENDIMENTO.
+     */
     @Test
     public void ct21_atenderFalhaDeveLevarParaEmAtendimento() {
         FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
@@ -74,8 +78,8 @@ public class FacadeGestaoFalhaTest {
     }
 
     /**
-    Verifica a transição para ENCERRADO.
-    */
+     * Verifica a transição para ENCERRADO.
+     */
     @Test
     public void ct22_encerrarFalhaDeveLevarParaEncerrado() {
         FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
@@ -84,6 +88,5 @@ public class FacadeGestaoFalhaTest {
 
         assertEquals("ENCERRADO", stub.getEstadoAtual().nome());
     }
-    
+
 }
-    

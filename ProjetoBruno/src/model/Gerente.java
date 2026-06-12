@@ -8,13 +8,16 @@ import services.Funcionario;
 
 /**
  * Implementação de funcionario como gerente
+ *
  * @author Lucas Sanches Marcilio Pereira
  * @since 2026
  * @version 1.0.0
  */
-public class Gerente implements Funcionario{
+public class Gerente implements Funcionario {
+
     private int id;
     private String nome;
+
     /**
      * @return retorna o valor do atributo id
      */
@@ -22,6 +25,7 @@ public class Gerente implements Funcionario{
     public int getId() {
         return id;
     }
+
     /**
      * @param id define o valor do atributo id para o valor recebido
      */
@@ -29,6 +33,7 @@ public class Gerente implements Funcionario{
     public void setId(int id) {
         this.id = id;
     }
+
     /**
      * @return retorna o valor (String) do atributo nome
      */
@@ -36,13 +41,13 @@ public class Gerente implements Funcionario{
     public String getNome() {
         return nome;
     }
+
     /**
-     * @param nome define o valor do atributo nome para a String recebida 
+     * @param nome define o valor do atributo nome para a String recebida
      */
     @Override
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
-    
+
 }

@@ -1,4 +1,3 @@
-
 package factory;
 
 import services.FabricaFuncionarios;
@@ -7,16 +6,18 @@ import services.Funcionario;
 
 /**
  * Responsavel pela criação de gerentes, é uma subclasse de FabricaFuncionarios
+ *
  * @author Lucas Sanches Marcilio Pereira
  * @since 2026
  * @version 1.0.0
  */
-public class FabricaGerente extends FabricaFuncionarios{
+public class FabricaGerente extends FabricaFuncionarios {
+
     /**
-     * @return retorna uma nova instancia de gerente 
+     * @return retorna uma nova instancia de gerente
      */
     @Override
-    public Funcionario criarFuncionario(){
+    public Funcionario criarFuncionario() {
         return new Gerente();
     }
 }

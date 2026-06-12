@@ -9,11 +9,16 @@ import domain.Falha;
 
 /**
  * Esta classe é uma das possibilidades de estados - EstadoConcluido
+ *
  * @author Gabriel Dias Santiago
+ * @since 2026
+ * @version 1.0.0
  */
 public class EstadoConcluido implements EstadoFalha {
+
     /**
-     * @param f  define o estado do objeto recebido para o proximo na fila - EstadoEncerrado
+     * @param f define o estado do objeto recebido para o proximo na fila -
+     * EstadoEncerrado
      */
     @Override
     public void encerrar(Falha f) {

@@ -1,49 +1,61 @@
 package factoryTest;
+
 import services.FabricaFuncionarios;
 import model.Gerente;
 import model.Operador;
 import model.Tecnico;
 import services.Funcionario;
-import factory.*;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import stubs.FabricaGerenteStub;
 import stubs.FabricaOperadorStub;
 import stubs.FabricaTecnicoStub;
+
 /**
- * Teste Responsavel por verificar a criação de funcionarios (Operador, Gerente e Tecnico).
- * 
- * Intancia uma fabrica que cria objetos que possuem a interface Funcionario (Operador, Gerente e Tecnico), ou seja,
- * facilita correções em que é necessario trocar o tipo de funcionario que vai ser instanciado
- * 
+ * Teste Responsavel por verificar a criação de funcionarios (Operador, Gerente
+ * e Tecnico).
+ *
+ * Intancia uma fabrica que cria objetos que possuem a interface Funcionario
+ * (Operador, Gerente e Tecnico), ou seja, facilita correções em que é
+ * necessario trocar o tipo de funcionario que vai ser instanciado
+ *
  * @author Lucas Sanches Marcilio Pereira
  * @since 2026
  * @version 1.0.0
  */
-
 public class FactoryFuncionarios {
-    
+
     public FactoryFuncionarios() {
     }
-    
+
+    /**
+     * Verifica se a criação de um operador é bem sucedida
+     */
     @Test
     public void ct14_deveCriarUmOperador() {
         FabricaFuncionarios fabrica = new FabricaOperadorStub();
         Funcionario funcionario = fabrica.criarFuncionario();
         assertTrue("O Funcionario criado deve ser um Operador", funcionario instanceof Operador);
     }
+
+    /**
+     * Verifica se a criação de um gerente é bem sucedida
+     */
     @Test
-    public void ct15_deveCriarUmGerente(){
+    public void ct15_deveCriarUmGerente() {
         FabricaFuncionarios fabrica = new FabricaGerenteStub();
         Funcionario funcionario = fabrica.criarFuncionario();
         assertTrue("O Funcionario criado deve ser um Gerente", funcionario instanceof Gerente);
     }
+
+    /**
+     * Verifica se a criação de um tecnico é bem sucedida
+     */
     @Test
-    public void ct16_deveCriarUmTecnico(){
+    public void ct16_deveCriarUmTecnico() {
         FabricaFuncionarios fabrica = new FabricaTecnicoStub();
         Funcionario funcionario = fabrica.criarFuncionario();
         assertTrue("O Funcionario criado deve ser um Tecnico", funcionario instanceof Tecnico);
     }
-    
+
 }

@@ -9,22 +9,32 @@ import domain.Falha;
 
 /**
  *
- * Classe responsável por simular observadores 
+ * Classe responsável por simular observadores
+ *
  * @author Ana Livia Vasconcellos
  * @since 2026
+ * @version 1.0.0
  */
+public class ObserverStub implements ObservadorFalha {
 
-public class ObserverStub implements ObservadorFalha{
     private int vezesNotificado = 0;
-    
-    public int getVezesNotificado(){
+
+    /**
+     *
+     * @return retorna o valor armazenado no atributo vezesNotificado
+     */
+    public int getVezesNotificado() {
         return vezesNotificado;
     }
+
+    /**
+     * Incrementa a quantidade de vezes notificado a cada chamado
+     *
+     * @param f parametro exigido para manter coerente a classe pai
+     */
     @Override
     public void atualizar(Falha f) {
-            vezesNotificado++;
+        vezesNotificado++;
     }
-        
-        
-    
+
 }

@@ -8,8 +8,11 @@ import services.ObservadorFalha;
 import domain.Falha;
 
 /**
- *
- * @author vasco
+ * Um dos modelos de observer disponiveis.
+ * Possui o intuito de ser um painel voltado a maquina e sua produção
+ * @author Ana Livia Vasconcellos
+ * @since 2026
+ * @version 1.0.0
  */
 public class PainelProducao implements ObservadorFalha {
 

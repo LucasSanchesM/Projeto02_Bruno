@@ -6,7 +6,9 @@ package model;
 
 /**
  *
- * @author gabri
+ * @author Gabriel Dias Santiago
+ * @since 2026
+ * @version 1.0.0
  */
 public enum Prioridade {
     BAIXA,

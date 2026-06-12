@@ -7,13 +7,17 @@ package services;
 import domain.Falha;
 
 /**
- * Padrão STATE: cada estado de Falha sabe quais transições são válidas a partir dele, transições invalidas por padrao
- * retorna um erro de IllegalStateException
+ * Padrão STATE: cada estado de Falha sabe quais transições são válidas a partir
+ * dele, transições invalidas por padrao retorna um erro de
+ * IllegalStateException
+ *
  * @author Gabriel Dias Santiago
+ * @since 2026
+ * @version 1.0.0
  */
 public interface EstadoFalha {
-    
-     default void iniciarAnalise(Falha f) {
+
+    default void iniciarAnalise(Falha f) {
         throw new IllegalStateException("Transicao invalida: iniciarAnalise a partir de " + nome());
     }
 
