@@ -102,4 +102,8 @@ public class FacadeGestaoFalha {
     System.out.println("Iniciando analise da falha..." + idFalha);
     falha.iniciarAnalise();
     }
+    
+    public void setFalha(Falha f){
+        this.falha = f;
+    }
 }

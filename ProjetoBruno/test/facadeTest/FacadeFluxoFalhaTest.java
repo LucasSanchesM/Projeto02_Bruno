@@ -27,18 +27,18 @@ public class FacadeFluxoFalhaTest {
     @Test
     public void ct17_deveConcluirFluxoDeFalhaComSucessoAteAtendimento() {
         
-    int idFalha = 1;
-    int idTecnico = 1;
+        int idFalha = 1;
+        int idTecnico = 1;
 
-    FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
+        FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
 
-    FacadeGestaoFalha facade = new FacadeGestaoFalha(stub);
+        FacadeGestaoFalha facade = new FacadeGestaoFalha(stub);
 
-    facade.iniciarAnaliseFalha(idFalha);
-    facade.aprovarFalha(idFalha);
-    facade.atenderFalha(idFalha, idTecnico);
+        facade.iniciarAnaliseFalha(idFalha);
+        facade.aprovarFalha(idFalha);
+        facade.atenderFalha(idFalha, idTecnico);
 
-    assertEquals("EM_ATENDIMENTO", stub.getEstadoAtual().nome());
-    
+        assertEquals("EM_ATENDIMENTO", stub.getEstadoAtual().nome());
+
     }
 }

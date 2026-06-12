@@ -80,7 +80,6 @@ public class FacadeGestaoFalhaTest {
     public void ct22_encerrarFalhaDeveLevarParaEncerrado() {
         FalhaFacadeStub stub = new FalhaFacadeStub(new DadosFalhaStub());
         FacadeGestaoFalha facade = new FacadeGestaoFalha(stub);
-
         facade.encerrarFalha();
 
         assertEquals("ENCERRADO", stub.getEstadoAtual().nome());

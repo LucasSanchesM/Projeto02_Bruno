@@ -23,11 +23,11 @@ public class FalhaFacadeStub extends Falha{
     /**
     Cria uma instância do stub utilizando os dados informados.
     @param dados dados utilizados na criação da falha.
+     * @param estado define um estado base para testes
     */
     public FalhaFacadeStub(DadosFalha dados) {
-    super(dados);
+        super(dados);
     }
-
     /**
     Simula a transição para o estado EM_ANALISE.
     */
@@ -57,7 +57,7 @@ public class FalhaFacadeStub extends Falha{
     */
     @Override
     public void encerrar() {
-    this.estadoAtual = new EstadoEncerrado();
+        this.estadoAtual = new EstadoEncerrado();
     }
 
     /**
