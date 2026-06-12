@@ -1,0 +1,5 @@
+ATENÇÂO!
+O link para o repositorio github é o seguinte: https://github.com/LucasSanchesM/Projeto02_Bruno
+A documentação javadoc foi hospedade pelo github, ela está presente neste link: https://lucassanchesm.github.io/Projeto02_Bruno/javadoc/index.html
+Atualmente ela está rodando normalmente, porem em caso de imprevisto em que a pagina caia, há a possibilidade de ser aberto localmente, basta baixar o repositorio
+e acessar ProjetoBruno/dist/javadoc/index.html
